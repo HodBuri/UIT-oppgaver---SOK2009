@@ -1,0 +1,158 @@
+---
+title: "mappe1_SOK-2009"
+format: pdf
+editor: visual
+---
+
+## Assignment 6
+
+Du får i oppgave å lage et spill til kasino, Hver gang spillerne får et tall $x$ på to terninger, i.e. $T_2 = x$ tjener spilleren
+
+en bonus $(B)$ på $10 000$ kroner.
+
+#### 1)
+
+En formel for forventet premie B om det bare er et utfall som gir premie er E\[B\] = p(B)B; kan du sette opp denne formelen dersom to eller N utfall gir premie?
+
+\-\--
+
+To find the expected bonus$E[x]$ when there are multiple outcomes that yield a bonus, we can use this formula:
+
+$$E[B]=\Sigma_{i=1}^n{p(B_i)B_i}$$
+
+Here we are summing all outcomes of the probability of receiving the bonus $p(B)B$.
+
+So if we create an example game where we roll two dices, and we have the win condition of double six.
+
+With 2d6 total outcome is $6*6=36$, so the outcome of doubler 6 is $\frac{1}{36}$ each. And lets use the bonus $(B)$ on $10,000$ KR
+
+The expected bonus would then be:
+
+$$ E[B]=\frac{1}{36}*10,000+\frac{1}{36}*10,000 = 555.5555.... \approx 555.56 $$
+
+This means if a player played enough games, they will win on average $555.56$ kr each game.
+
+------------------------------------------------------------------------
+
+#### 2)
+
+Hva er minste spillet kan koste samtidig som kasino ikke taper penger. ( Kasinoet har en kjempe stor egenkapital og kan låne så mye de vil i banken).
+
+\-\--
+
+Here we would do it similar to what we did in the example, but since double N is the victory condition instead of 1/36 poseble outcome now there are 6/36 or 1/6.
+
+$$ E[B]=\frac{1}{6}*10,000+\frac{1}{6}*10,000 = 3333.3333...\approx 3333.34 $$
+
+So if a player can expect to win 3333.34 on each game over a large enough games, the casino can expect to loose on average 3333.4 on each game played over time.\
+\
+So a minimum price would be approximate 3333.34 kr
+
+------------------------------------------------------------------------
+
+#### 3)
+
+Kan du sette opp en B for få et eller flere tall, en pris for deltakelse D for å spille slik at spillerene vinner med sannsynlighet:
+
+A. 1/36
+
+B. 2/36
+
+C. 1/2
+
+\-\--
+
+B = Bonus
+
+D = Buy-in
+
+So here we can adjust the formula we have used, since $D$ will cover some amount of $B$, we can change it to:\
+$$E[B]=p(B)B-D$$ Here we know the buy in $D$ needs to be above 0 to have any effect and lowering the risk for the casino, as well we know it needs to be below the expected bonus when $D = 0$ so that players can gain profit.\
+\
+So lets first solve for D, if $p(B) = \frac{1}{36}$.
+
+$$D=\frac{1}{36}*10,000=277.7777.... \approx 277.78$$
+
+So we know that $D$ needs to be somewhere between 0 and 277.78 or $0 <= D <= 277.78$. But since the question ask us to just set a number for $B$ and $D$.\
+I have already set $B = 10,000$, and I can set $D = 150$ to soften the risk for the casino. So with this the casino can lower there price with $D$, and go below $E[B]$ without lose.
+
+And we can continue doing the same for each game:
+
+Here if $p(B) = \frac{2}{36}$.
+
+$$D=\frac{2}{36}*10,000=555.5555.... \approx 555.56$$
+
+So we need something where $0 <= D <= 555.56$. Anything between that range.
+
+Lets just sett $B = 10,000$ and $D=250$
+
+And since the probability is 50/50 here, lets change the $B$ if $p(B) = \frac{1}{2}$, to $B=100$
+
+$$D=\frac{1}{2}*100=50$$
+
+And the same here, $D$ needs to be between $0$ and $50$.
+
+With $B=100$ and $D=25$
+
+------------------------------------------------------------------------
+
+#### 4.1)
+
+En gruppe kunder har tapt myke penger og er lei seg. De klager og sier det er urettferdig at kasinoet ditt tar mer betalt for å spille en forventet utbetaling. Hvordan forklarer du dette til kundene?
+
+\-\--
+
+Expected pay-out is what the casino can expect to lose over a infinite amount of players, so if they didn't take more at best they would go in 0 assuming everyone works for free and cost of running the casino is 0.
+
+------------------------------------------------------------------------
+
+#### 4.2)
+
+Eieren av kasinoet er lei seg fordi banken tar høyere rente av lånet hans en det banken betaler i innskudsrente. Hvordan forklarer du til eieren at banken må ta rente.
+
+\-\--
+
+Similar to a casino, a bank is gambling when lending money. So similar to what the casino does, it needs a "House-Edge". So they need to be able to cover expected lose from Interest Rate and other
+
+------------------------------------------------------------------------
+
+#### 5)
+
+En gruppe på 5 studenter$i ∈ {1, 2, 3, 4, 5}$ går på kasino. Vi skriver poengsummen i statistikkfaget deres på skalaen $p_i ∈ [1, 100]$ og gevinsten på kasino $[−100, 100]$. Data er som følger, ${s_i, p_i}i$ : ${10, −50}$, ${78, −100}$, ${98, 100}$, ${60, 50}$, ${30, 25}$.
+
+Kan du sett opp gjennomsnitt og median for $p_i$ og $s_i$. Er det noe type tall i utvalget? Sett også opp varians, standardavik for $s_i$, $p_i$ og korrelasjon og kovarians mellom $s_i$, $p_i$
+
+\-\--
+
+**Mean** of $s_i$ and $p_i$
+
+$$ s = \frac{10+78+98+60+30}{5}=55.5 $$
+
+$$ p=\frac{-50+(-100)+100+50+30+25}{5}=5 $$\
+**Median:**
+
+$$ s = (10,30,60,78,98) = 60 $$
+
+$$ p = (-100,-50,25,50,100) = 25 $$
+
+**Variance**
+
+$$ Var(s)=\frac{\Sigma_{i=1}^n(s_i-\bar{s})^2}{n-1} = 1263.2 $$
+
+$$ Var(p)=\frac{\Sigma_{i=1}^n(p_i-\bar{p})^2}{n-1} = 6375 $$
+
+**Standard Deviation**
+
+$$ \sigma_s = \sqrt{Var(s)}=35.541 $$
+
+$$ \sigma_p = \sqrt{Var(p)}=79.843 $$
+
+**Covariance**
+
+$$ COV_{s,p}=\frac{\Sigma_{i=1}^n(s_i-\bar{s})(p_i-\bar{p})}{n-1} = 967.5 $$
+
+**Correlation**
+
+$$ r = \frac{\Sigma_{i=1}^n(s_i-\bar{s})(p_i-\bar{p})}{\sqrt{\Sigma_{i=1}^n(s_i-\bar{s})^2\Sigma_{i=1}^n(p_i-\bar{p})^2}} = 0.34 $$
+
+------------------------------------------------------------------------

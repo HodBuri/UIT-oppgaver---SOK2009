@@ -1,0 +1,426 @@
+---
+title: "Sok2009-Oppg1"
+format: html
+editor: visual
+---
+
+## Oppgavesett SOK-2009
+
+I have selected to do number 6 as my main assignment/task
+
+## Main Assignment - Assignment 6
+
+The assignment is:\
+Du får i oppgave å lage et spill til kasino, Hver gang spillerne får et tall $x$ på to terninger, i.e. $T_2 = x$ tjener spilleren
+
+en bonus $(B)$ på $10 000$ kroner.
+
+#### 1)
+
+En formel for forventet premie B om det bare er et utfall som gir premie er E\[B\] = p(B)B; kan du sette opp denne formelen dersom to eller N utfall gir premie?
+
+------------------------------------------------------------------------
+
+To find the expected bonus$E[x]$ when there are multiple outcomes that yield a bonus, we can use this formula:
+
+$$E[B]=\Sigma_{i=1}^n{p(B_i)B_i}$$
+
+Here we are summing all outcomes of the probability of receiving the bonus $p(B)B$.
+
+So if we create an example game where we roll two dices, and we have the win condition of double six.\
+
+With 2d6 total outcome is $6*6=36$, so the outcome of doubler 6 is $\frac{1}{36}$ each. And lets use the bonus $(B)$ on $10,000$ KR
+
+The expected bonus would then be:
+
+$$
+E[B]=\frac{1}{36}*10,000+\frac{1}{36}*10,000 = 555.5555.... \approx 555.56
+$$
+
+This means if a player played enough games, they will win on average $555.56$ kr each game.
+
+#### 2)
+
+Hva er minste spillet kan koste samtidig som kasino ikke taper penger. ( Kasinoet har en kjempe stor egenkapital og kan låne så mye de vil i banken).
+
+------------------------------------------------------------------------
+
+Here we would do it similar to what we did in the example, but since double N is the victory condition instead of 1/36 poseble outcome now there are 6/36 or 1/6.
+
+$$
+E[B]=\frac{1}{6}*10,000+\frac{1}{6}*10,000 = 3333.3333...\approx 3333.34
+$$
+
+So if a player can expect to win 3333.34 on each game over a large enough games, the casino can expect to loose on average 3333.4 on each game played over time.\
+\
+So a minimum price would be approximate 3333.34 kr
+
+#### 3)
+
+Kan du sette opp en B for få et eller flere tall, en pris for deltakelse D for å spille slik at spillerene vinner med sannsynlighet:
+
+A. 1/36
+
+B. 2/36
+
+C. 1/2
+
+------------------------------------------------------------------------
+
+B = Bonus
+
+D = Buy-in
+
+So here we can adjust the formula we have used, since $D$ will cover some amount of $B$, we can change it to:\
+$$E[B]=p(B)B-D$$ Here we know the buy in $D$ needs to be above 0 to have any effect and lowering the risk for the casino, as well we know it needs to be below the expected bonus when $D = 0$ so that players can gain profit.\
+\
+So lets first solve for D, if $p(B) = \frac{1}{36}$.
+
+$$D=\frac{1}{36}*10,000=277.7777.... \approx 277.78$$
+
+So we know that $D$ needs to be somewhere between 0 and 277.78 or $0 <= D <= 277.78$. But since the question ask us to just set a number for $B$ and $D$.\
+I have already set $B = 10,000$, and I can set $D = 150$ to soften the risk for the casino. So with this the casino can lower there price with $D$, and go below $E[B]$ without lose.
+
+And we can continue doing the same for each game:\
+
+Here if $p(B) = \frac{2}{36}$.
+
+$$D=\frac{2}{36}*10,000=555.5555.... \approx 555.56$$
+
+So we need something where $0 <= D <= 555.56$. Anything between that range.
+
+Lets just sett $B = 10,000$ and $D=250$
+
+And since the probability is 50/50 here, lets change the $B$ if $p(B) = \frac{1}{2}$, to $B=100$
+
+$$D=\frac{1}{2}*100=50$$
+
+And the same here, $D$ needs to be between $0$ and $50$.
+
+With $B=100$ and $D=25$
+
+#### 4.1)
+
+En gruppe kunder har tapt myke penger og er lei seg. De klager og sier det er urettferdig at kasinoet ditt tar mer betalt for å spille en forventet utbetaling. Hvordan forklarer du dette til kundene?
+
+------------------------------------------------------------------------
+
+Expected pay-out is what the casino can expect to lose over a infinite amount of players, so if they didn't take more at best they would go in 0 assuming everyone works for free and cost of running the casino is 0.
+
+#### 4.2)
+
+Eieren av kasinoet er lei seg fordi banken tar høyere rente av lånet hans en det banken betaler i innskudsrente. Hvordan forklarer du til eieren at banken må ta rente.
+
+------------------------------------------------------------------------
+
+Similar to a casino, a bank is gambling when lending money. So similar to what the casino does, it needs a "House-Edge". So they need to be able to cover expected lose from Interest Rate and other
+
+#### 5)
+
+En gruppe på 5 studenter$i ∈ {1, 2, 3, 4, 5}$ går på kasino. Vi skriver poengsummen i statistikkfaget deres på skalaen $p_i ∈ [1, 100]$ og gevinsten på kasino $[−100, 100]$. Data er som følger, ${s_i, p_i}i$ : ${10, −50}$, ${78, −100}$, ${98, 100}$, ${60, 50}$, ${30, 25}$.
+
+Kan du sett opp gjennomsnitt og median for $p_i$ og $s_i$. Er det noe type tall i utvalget? Sett også opp varians, standardavik for $s_i$, $p_i$ og korrelasjon og kovarians mellom $s_i$, $p_i$
+
+------------------------------------------------------------------------
+
+**Mean** of $s_i$ and $p_i$
+
+$$
+s = \frac{10+78+98+60+30}{5}=55.5
+$$
+
+$$
+p=\frac{-50+(-100)+100+50+30+25}{5}=5
+$$\
+**Median:**
+
+$$
+s = (10,30,60,78,98) = 60
+$$
+
+$$
+p = (-100,-50,25,50,100) = 25
+$$
+
+**Variance**
+
+$$
+Var(s)=\frac{\Sigma_{i=1}^n(s_i-\bar{s})^2}{n-1} = 1263.2
+$$
+
+$$
+Var(p)=\frac{\Sigma_{i=1}^n(p_i-\bar{p})^2}{n-1} = 6375
+$$
+
+**Standard Deviation**
+
+$$
+\sigma_s = \sqrt{Var(s)}=35.541
+$$
+
+$$ \sigma_p = \sqrt{Var(p)}=79.843 $$
+
+**Covariance**
+
+$$
+COV_{s,p}=\frac{\Sigma_{i=1}^n(s_i-\bar{s})(p_i-\bar{p})}{n-1} = 967.5
+$$
+
+**Correlation**
+
+$$
+r = \frac{\Sigma_{i=1}^n(s_i-\bar{s})(p_i-\bar{p})}{\sqrt{\Sigma_{i=1}^n(s_i-\bar{s})^2\Sigma_{i=1}^n(p_i-\bar{p})^2}} = 0.34
+$$
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## Rest of the assignments:
+
+And I am a bit unsure if we were suppose, as we were told to select one to send in, but recommended to do all. So here are at least some of them - as much as I can do in the time left.
+
+Note: Ok, i'm 85% sure we don't need to solve and send these inn as well... but...hm...
+
+!remove before sending and continue later!
+
+### Assignment1
+
+En diskret variabel $X$ kan ta verdiene $x_i ∈ {x0.....xN }$. Forventningen til $X$, $E[X]$, er summen av mulige utfall ganger sannsynligheten for utfallet: $$E[X] = x_0p(x_o) + x_1p(x_1) + x_2p(x_2) + ...... + x_N p(x_N ) = Σ^{i=N}_{i=0} p(X = x)$$
+
+#### 1)
+
+Bruk definisjonen til å finne forventningen av en variabel $T$ som er lik antall prikker på en seks-sidet terning $t ∈ {1...6}$ der alle utfall har samme sannsynlighet $p(X = x) = \frac{1}{6}$. Vi skriver dette , $E[T]$. Hva er sannsynligheten forå få den forventede verdien? Forklar svaret ditt.
+
+------------------------------------------------------------------------
+
+We would do some changes to it, and it would look something like this
+
+$$
+E[X] = \Sigma_{i=1}^{6}p(T=t_i)t_i=\frac{1}{6}*1+\frac{1}{6}*2+\frac{1}{6}*3+\frac{1}{6}*4+\frac{1}{6}*5+\frac{1}{6}*6 = 3.5
+$$
+
+As we see the expected value $E[X]$ is $3.5$, and anyone that has rolled a d6 before know that it is not possible to get $3.5$ on a roll. So the probability of getting the expected value in a single roll is equal to 0.
+
+#### 2)
+
+Finn forventningen til summen av to seksidede terninger $2T$, $E[2T]$. Skriv svaret på formen av formelen over dvs. $E[2T] = \Sigma_{t=2}^{12} p(2T = t)t$. Hva er forskjellen mellom sannsynlighetene $p(2T = t)t$ og $p(T = t)$?
+
+En sannsynlighetsfordeling for en diskret variabel som $T$ gir sannsynligheten for å få de mulige verdiene i utfallsrommet:
+
+$f(x) = P(X = x)$
+
+Den kumulative sannsynlighetsfordelingen gir sannsynligheten for at en variabel skal være mindre eller lik en gitt verdi x: $F(x) = P(X ≤ x) = \Sigma_{0}^{X}f(x)$
+
+------------------------------------------------------------------------
+
+With 2 dices can roll between 2 and 12, and we have a total possibility of 6\*6 or 36 total outcome so.
+
+First we need to find out the chance of getting a number on each roll.
+
+$1$ and $12$ as an example only has a $1/36$ chance, since the only option is snake eye ${1,1}$ or double six ${6,6}$. After finding all probabilities one take:
+
+$$
+E[2T] = \Sigma_{t=2}^{12}\frac{number-of-chances}{36 (total outcome)}*t = 7 
+$$
+
+So $E[2T] = 7$, or I belive one can take the expected value of a single die roll $3.5$ and multiply it with $N$ amount of dices $N*3.5=7$
+
+And for the difference between $p(2T = t)t$ and $p(2T = t)t$ is that the first is uniform, every number has an equal chance. While the second is not, and the chances are more like a bell curve with higher chances in the middle then the edge,
+
+#### 3)
+
+Hva er utfallrommet for $2T$ og utfallsrommet for antall prikker på to separate terninger T, T?
+
+------------------------------------------------------------------------
+
+$2T = {2,3,4....12}$
+
+$T,T = {(1,1),(1,2).....(6,6)}$
+
+#### 4)
+
+Hva er f(5) for en eller to terninger? Hva er F(3) for en eller to terninger?
+
+------------------------------------------------------------------------
+
+f(X) = p(X=x)
+
+The probability of rolling a 5 on a 1d6 is $\frac{1}{6}$
+
+The probability of rolling a 5 on a 2d6 is $4*\frac{1}{36}=\frac{1}{9}$
+
+F(X) = p(X\<=x)\
+And F(3) with 1d6 is $3*\frac{1}{6}=\frac{3}{6}=\frac{1}{2}$
+
+With 2d6 is $2*\frac{1}{36} = \frac{2}{36} = \frac{1}{18}$
+
+#### 5)
+
+Anta at en terning har $N > 3$ sider med ${1, 2, 3..t..,(N − 1), N}$ prikker på hver side. Hva er sannsynligheten for å få $t$ prikker? Kan du skrive et utrykk for forventet antall prikker?
+
+------------------------------------------------------------------------
+
+$$
+p(T=t)=\frac{1}{N}
+$$
+
+$$
+E[x] = \Sigma_{i=0}^Nt_iP(t_i) = 1*\frac{1}{N}+2*\frac{1}{N}...+N*\frac{1}{N} = \frac{N(N+1)}{2} = \frac{N+1}{2}
+$$
+
+#### 6)
+
+Kan du finne sannsynligheten for at antall prikker på to terninger ligger over 2 eller under 12, det vil si P(3 ≤ 2T ≤ 11) = F(11) − F(3) = Σ11 0 f(2T) − Σ 2 0 f(2T) = Σ11 3 f(2T).
+
+------------------------------------------------------------------------
+
+$$
+\Sigma_{i=3}^{11}f(2T)=\frac{32}{36}=\frac{8}{9}
+$$
+
+### Assignment2
+
+Vi har en variabel $X$ som har et utfallsrom $x ∈ {1, 2, 3}$ der utfall har sannsynlighet $p(X = x) = \frac{x}{6}$ for alle utfall i utfallsrommet
+
+#### 1)
+
+Kan du tegne opp fordelingen til f(x) for verdiene i utfallsrommet ? Hva kaller vi denne fordelingen?
+
+------------------------------------------------------------------------
+
+This would be a probability mass function (PMF), and here we would see the probability of getting each outcome
+
+-   $p(X = 1) = \frac{1}{6}$
+
+-   $p(X = 2) = \frac{2}{6} = \frac{1}{3}$
+
+-   $p(X = 3) = \frac{3}{6} = \frac{1}{2}$
+
+Note add in graph !!!!!
+
+#### 2)
+
+Kan du tegne den kumulative sannsynlighetsfordelingen F(X) for X og X3?
+
+------------------------------------------------------------------------
+
+This would be a cumulative distribution function (CDF), and we are looking at cumulative probability up to a given value.
+
+For $F(X)$
+
+-   $F(1) = p(X <= 1) = \frac{1}{6}$
+
+-   $F(2) = p(X <= 2) = \frac{1}{6}+\frac{2}{6} = \frac{1}{2}$
+
+-   $F(3) = p(X <= 3) = \frac{1}{6}+\frac{2}{6}+\frac{3}{6} = 1$
+
+For $F(X^3)$:
+
+-   $F(1^3 = 1) = p(X^3 <= 1) = \frac{1}{6}$
+
+-   $F(2^3 = 8) = p(X^3 <= 8) = \frac{1}{6}+\frac{2}{6} = \frac{1}{2}$
+
+-   $F(3^ = 27) = p(X^3 <= 27) = \frac{1}{6}+\frac{2}{6}+\frac{3}{6} = 1$
+
+Note add in graph !!!!!
+
+#### 3)
+
+Hva er forventningen E\[X\] ? Hva er forventningen til E\[X\^3\]?
+
+------------------------------------------------------------------------
+
+$$
+E[X] = \Sigma^N_{i=1}P(\frac{x_i}{6})x_i = \frac{1}{6}*1+\frac{2}{6}*2+\frac{3}{6}*3 = \frac{1+4+9}{6} = \frac{14}{6} = \frac{7}{3} = 2.33333... \approx 2.34 
+$$
+
+$$
+E[X^3] = \Sigma^N_{i=1}P(\frac{x_i}{6})x_i = \frac{1}{6}*1+\frac{2}{6}*8+\frac{3}{6}*27 = \frac{1+16+81}{6} = \frac{98}{6} = \frac{49}{3} = 16.33333... \approx 16.34 
+$$
+
+#### 4) !!!!!!!!!!!!!!!!!!
+
+Kan du regne ut korrelasjon, kovarians, varians og standardavik for $(Y_1, Y_2)$ der $Y_1 = 3 + 5X$ og $Y_2 = 4 + 6X^3$ og $(X, X^3)$ for verdiene $x ∈ {1, 2, 3}$. Kan du forklare svaret du får med egne ord?
+
+------------------------------------------------------------------------
+
+**Covariance**
+
+This measures the degree to which two variables vary together.
+
+!!! Add in calculation
+
+**Correlation**
+
+The Correlation is the strength and direction of the relationship between two variables. Ranges from -1 to 1
+
+!!! Add in calculation
+
+**Variance**
+
+Variance is the calculation of how far each number is from the mean average.
+
+!!! Add in calculation
+
+**Standard Deviation**
+
+Standard Deviation calculates the dispersion of a dataset relative to its mean, by taking the square root of variance
+
+!!! Add in calculation
+
+### Assignment3
+
+Definer $T$ som antall prikker på en seksidet terning og $2T$ som antall prikker på to sekssidede terninger.
+
+#### 1)
+
+Et av utfallsrommene $T$ og $2T$ har uniform sannsynlighet det andre har ikke uniform sannsynlighetsfordeling.
+
+Forklar hva det betyr og hvorfor det er slik. Tegn opp grafen for $f(T)$, $f(2T)$ og den kumulative sannsynlighetsfordelingen $F(2T)$, $F(T)$?
+
+------------------------------------------------------------------------
+
+#### 2)
+
+Kan du regne ut korrelasjon, kovarians, varians og standardavik for T og 2T?
+
+#### 3)
+
+Kan du lage en grafisk fremmstilling fra to utfallsrom til T til ett utfallsrom med 2T. Tips er ˚a bruke piler. Dersom to hendelser A og B er uavhengige hendelser holder det at P(AB) = P(A)P(B). Les som og, alts˚a settet av A og B
+
+#### 4)
+
+For to terningkast, hva er sannsynligheten for ˚a observere at to terninger er like, t1 = t2 definer dette som P(A)? Hva er sannsynligheten for ˚a observere at summen er mellom 7 og 10 definer dette som P(B)? Hva er sannsynligheten for ˚a observere at summen er 2, 7 eller 8 definer dette som P(C). Hva er sannsynligheten for at alle tre A B og C skal skje i.e P(A ∩ B ∩ C)? Hva er sannsynligheten for P(A ∩ B)? Kan du forklare hvorfor du f˚ar svarene?
+
+### Assignment4
+
+Anta at du observer følgende tre data sett d j i : d 1 i ∈ {1, 2, 4, 5} , d 2 i ∈ {5, 6} , d 3 i ∈ {6, 8, 4, 5}
+
+#### 1)
+
+Hvilke av datasettene har positiv sannsynlighet for ˚a være generert av en seksidet terning og hvilke kan være fra to seksidede terninger? Forklar svaret ditt.
+
+#### 2)
+
+Regn ut gjennomsnitt di og standardaviket, SDdi for alle tre utvalgene i.e. j ∈ 1, 2, 3.
+
+#### 3)
+
+Regn ut forventning og standardaviket for antall prikker p˚a en seksidet terning, T og summen av prikker p˚a to seksidede terninger 2T.
+
+#### 4)
+
+Hva er forventningen til to terninger kastet to ganger i.e. 2 × E\[2T\] ? Hva er forventningen til en terning kastet to ganger 2 × E\[T\] ?
+
+#### 5)
+
+La oss si at du har en hypotese om at d i 2 er generet av en terning (T). Hva er sannsynligheten for ˚a obeservere d 2 i dersom data er generert av en terning? Hva er sannsynligheten for ˚a observere d 2 i dersom data er generert av to terninger?
+
+## Bonus/Star assignments:
+
+I definitely wont send them in, as I might risk having to do extra work later
+
+### Assignment5
+
+### Assignment7
